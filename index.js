@@ -54,6 +54,6 @@ res.redirect('/')
         res.sendFile(Path.join(__dirname, 'registration','signin.html'))
     }
 })
-app.listen(Port,(req,res)=>{
-    console.log('localHost:',Port)
-})
+app.listen(process.env.PORT || 3000, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  });
